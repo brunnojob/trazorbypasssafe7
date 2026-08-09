@@ -626,7 +626,7 @@ function BankScreen({ bankAccount, setBankAccount }: { bankAccount: BankAccount 
             <strong>{bankAccount?.bank_name || 'Seu banco aparecerá aqui'}</strong>
             <span>{bankAccount ? `Agência ${bankAccount.agency} · Conta •••${bankAccount.account_number.slice(-3)}` : 'Cadastre os dados ao lado'}</span>
           </div>
-          <p className="muted small-copy">Depois de cadastrar, sua conta ficará disponível como destino para uma futura transferência. Este ambiente não movimenta valores reais.</p>
+          <p className="muted small-copy">Depois de cadastrar, sua conta ficará disponível como destino para uma futura transferência.</p>
         </div>
       </div>
     </div>
