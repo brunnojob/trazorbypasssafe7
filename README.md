@@ -24,3 +24,9 @@ Use the [shared operations archive client](https://github.com/brunnojob/vercel-h
 ## License
 
 Original source and documentation are MIT licensed; see [LICENSE](LICENSE). Third-party dependencies and media retain their respective terms. Maintained by [Brunno Dev](https://brunnodev.store).
+
+## Implementation update
+
+Authentication changes invalidate pending writes and account refreshes. Responses started under an earlier session cannot repopulate account state after a user change or sign-out.
+
+Contribution trailer: `Co-authored-by: nyctophile <33561761+ineedfoundmyway@users.noreply.github.com>`.

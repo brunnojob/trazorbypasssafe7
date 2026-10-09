@@ -47,6 +47,7 @@ export default function App() {
   const [signup, setSignup] = useState(false);
   const pending = useRef<{ intent: string; request: { p_account: string; p_delta: number; p_key: string; p_description: string; p_revision: number } } | null>(null);
   const account = accounts.find((row) => row.id === selected);
+  const authEpoch = useRef(0);
 
   useEffect(() => {
     let active = true;
@@ -54,9 +55,12 @@ export default function App() {
       if (active) setSession(data.session);
     });
     const { data } = supabase.auth.onAuthStateChange((_, next) => {
+      authEpoch.current += 1;
+      pending.current = null;
       setSession(next);
       setAccounts([]);
       setEntries([]);
+      setSelected("");
     });
     return () => {
       active = false;
@@ -65,10 +69,12 @@ export default function App() {
   }, []);
 
   async function refresh() {
+    const epoch = authEpoch.current;
     const { data, error } = await supabase
       .from("bd_wallet_accounts")
       .select("*")
       .order("created_at");
+    if (epoch !== authEpoch.current) return;
     if (error) throw error;
     setAccounts(data ?? []);
     setSelected((previous) =>
