@@ -1,10 +1,10 @@
 # Trazor Ledger
 
-Contas contábeis pessoais, entradas e despesas, histórico persistente, exportação e lançamentos transacionais com revisão esperada.
+Personal ledger accounts, income and expenses, persistent history, export, and transactional entries with expected revisions.
 
-## Executar
+## Run
 
-Requisitos: React, TypeScript e Supabase.
+Requirements: React, TypeScript, and Supabase.
 
 ```sh
 npm ci
@@ -13,17 +13,21 @@ npm run build
 npm run dev
 ```
 
-## Funcionamento
+## Behavior
 
-Configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY`. Valores são convertidos para centavos antes do registro. `bd_book_entry` atualiza o saldo e conserva o histórico na mesma transação. Trata-se de registro contábil de valores informados, sem custódia nem movimentação de criptoativos.
+Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. Amounts are converted to cents before recording. `bd_book_entry` updates the balance and preserves history in the same transaction. This application records amounts supplied by the user; it does not hold or transfer cryptocurrency.
 
-## Persistência de resultados
+## Result synchronization
 
-O arquivo de operações está em [vercel-home-telemetry-api.vercel.app](https://vercel-home-telemetry-api.vercel.app/laboratory.html?project=trazorbypasssafe7). As migrações Supabase estão no [repositório da API](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/supabase/migrations).
+The [operations archive](https://vercel-home-telemetry-api.vercel.app/laboratory.html?project=trazorbypasssafe7) stores execution results. Supabase migrations are in the [API repository](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/supabase/migrations).
 
 ```sh
-python cloud/sync.py enqueue resultado.json --project trazorbypasssafe7
+python cloud/sync.py enqueue result.json --project trazorbypasssafe7
 python cloud/sync.py sync
 ```
 
-Defina `BRUNNODEV_ACCESS_TOKEN` com sua sessão. A fila SQLite conserva os relatórios até confirmação do servidor; o mesmo conteúdo não gera registros duplicados. Tokens não são gravados no código.
+Set `BRUNNODEV_ACCESS_TOKEN` to your session token. The SQLite outbox retains reports until the server confirms persistence; identical content does not create duplicate records. Tokens are not stored in source code. To run the synchronization tests:
+
+```sh
+python -m unittest discover -s cloud
+```
