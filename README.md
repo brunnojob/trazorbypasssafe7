@@ -19,7 +19,7 @@ Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. Amounts are convert
 
 ## Optional report archive
 
-Export a JSON report from the command above, then run `python cloud/sync.py enqueue result.json --project trazorbypasssafe7` and `python cloud/sync.py sync`. Synchronization requires `BRUNNODEV_ACCESS_TOKEN` and the external operations API; the local outbox retains unacknowledged reports.
+Use the [shared operations archive client](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/cloud) to queue `result.json` under project `trazorbypasssafe7`. The client uses `BRUNNODEV_ACCESS_TOKEN` and retains unacknowledged reports locally.
 
 ## License
 
