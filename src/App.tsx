@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "./lib/supabase";
+import { money, parseMinor } from "./lib/money";
 
 type Account = {
   id: string;
@@ -16,19 +17,6 @@ type Entry = {
   description: string;
   created_at: string;
 };
-const money = (minor: number, currency: string) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency }).format(
-    minor / 100,
-  );
-function parseMinor(value: string) {
-  if (!/^\d{1,10}(?:[.,]\d{1,2})?$/.test(value))
-    throw new Error("Informe um valor positivo com até duas casas decimais.");
-  const [whole, fraction = ""] = value.replace(",", ".").split(".");
-  const minor = Number(whole) * 100 + Number(fraction.padEnd(2, "0"));
-  if (!Number.isSafeInteger(minor) || minor < 1 || minor > 1000000000000)
-    throw new Error("Valor fora do limite.");
-  return minor;
-}
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null);

@@ -1,7 +1,9 @@
 {
   "repository": "brunnojob/trazormodel",
   "inputs": [
-    ".proof/scenarios.json"
+    ".proof/scenarios.json",
+    "src/lib/money.ts",
+    ".proof/money.ts"
   ],
   "cases": [
     {
@@ -42,6 +44,17 @@
       ],
       "timeout": 900,
       "display": true
+    },
+    {
+      "name": "Convert decimal money exactly and reject unsafe monetary inputs",
+      "argv": [
+        "node",
+        ".proof/money.ts"
+      ],
+      "contains": [
+        "\"minor\":999999999999",
+        "\"invalid_values_rejected\":8"
+      ]
     }
   ]
 }

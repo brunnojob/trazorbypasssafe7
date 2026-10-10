@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/trazormodel",
+  "source_commit": "4d5e4454157e48a9953bca1cff51ce8d21dc7a9d",
+  "generated_at": "2026-10-10T02:34:43.477049+00:00",
+  "run_url": "https://github.com/brunnojob/trazormodel/actions/runs/38017471765",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "3a4ad26473d9e0c575fd697d5dd979b3b9bc1862106d7f6bbcc1fd21ddd19295"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "npm ci",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm ci"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 85.142,
+      "output": "\nadded 321 packages, and audited 322 packages in 1m\n\n66 packages are looking for funding\n  run `npm fund` for details\n\n33 vulnerabilities (2 low, 6 moderate, 25 high)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\nnpm warn install-scripts 1 package has install scripts not yet covered by allowScripts:\nnpm warn install-scripts   esbuild@0.21.5 (postinstall: node install.js)\nnpm warn install-scripts\nnpm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.\n",
+      "output_sha256": "161f47623c76cf0db0edd4e43a5238c9a00eece7dd9ea59767b75df0ce2cdae9"
+    },
+    {
+      "display": true,
+      "name": "npm run typecheck",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm run typecheck"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 1.656,
+      "output": "\n> trazor-ledger@2.0.0 typecheck\n> tsc --noEmit -p tsconfig.app.json\n\n",
+      "output_sha256": "d01260a3bd729457050bc252931046dab6088e966a4cfa2ca5601d6aae4f9239"
+    },
+    {
+      "display": true,
+      "name": "npm run build",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm run build"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 1.808,
+      "output": "\n> trazor-ledger@2.0.0 build\n> vite build\n\n\u001b[36mvite v5.4.8 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m✓\u001b[39m 103 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m  0.69 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip:  0.37 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[35mindex-DJ3ntlws.css  \u001b[39m\u001b[1m\u001b[2m  6.22 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip:  1.94 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[36mindex-BU-ojgqk.js   \u001b[39m\u001b[1m\u001b[2m275.54 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 82.32 kB\u001b[22m\n\u001b[32m✓ built in 1.45s\u001b[39m\n",
+      "output_sha256": "bd6caf33222caaa3c8d3d226a05a56c6504b34f935c05f9d924cdda35261b169"
+    }
+  ],
+  "passed": true
+}
