@@ -29,7 +29,7 @@ Original source and documentation are MIT licensed; see [LICENSE](LICENSE). Thir
 
 Authentication changes invalidate pending writes and account refreshes. Responses started under an earlier session cannot repopulate account state after a user change or sign-out.
 
-Contribution trailer: `Co-authored-by: nyctophile <329826984+ineedfoundmyway@users.noreply.github.com>`.
+Contribution trailer: `Co-authored-by: nyctophile <33561761+ineedfoundmyway@users.noreply.github.com>`.
 
 ## Execution proof
 
