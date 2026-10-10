@@ -32,10 +32,13 @@ $ bash -e -o pipefail -c npm run build
 
 [36mvite v5.4.8 [32mbuilding for production...[36m[39m
 transforming...
-[32m✓[39m 103 modules transformed.
+[32m✓[39m 104 modules transformed.
 rendering chunks...
 computing gzip size...
 [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.69 kB[22m[1m[22m[2m │ gzip:  0.37 kB[22m
 [2mdist/[22m[2massets/[22m[35mindex-DJ3ntlws.css  [39m[1m[2m  6.22 kB[22m[1m[22m[2m │ gzip:  1.94 kB[22m
-[2mdist/[22m[2massets/[22m[36mindex-BU-ojgqk.js   [39m[1m[2m275.54 kB[22m[1m[22m[2m │ gzip: 82.32 kB[22m
-[32m✓ built in 1.45s[39m
+[2mdist/[22m[2massets/[22m[36mindex-C3sX7nfW.js   [39m[1m[2m275.66 kB[22m[1m[22m[2m │ gzip: 82.36 kB[22m
+[32m✓ built in 1.14s[39m
+
+$ node .proof/money.ts
+{"converted":[{"input":"0.01","minor":1},{"input":"1.23","minor":123},{"input":"125,25","minor":12525},{"input":"9999999999.99","minor":999999999999}],"invalid_values_rejected":8,"formatted":"R$ 125,25"}
