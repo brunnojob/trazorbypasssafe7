@@ -1,0 +1,47 @@
+{
+  "repository": "brunnojob/trazormodel",
+  "inputs": [
+    ".proof/scenarios.json"
+  ],
+  "cases": [
+    {
+      "name": "npm ci",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm ci"
+      ],
+      "timeout": 900,
+      "display": false
+    },
+    {
+      "name": "npm run typecheck",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm run typecheck"
+      ],
+      "timeout": 900,
+      "display": true
+    },
+    {
+      "name": "npm run build",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm run build"
+      ],
+      "timeout": 900,
+      "display": true
+    }
+  ]
+}
